@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<title>Internship Ratings</title>	
 		<meta charset="UTF-8">
 		<meta name="description" content="Internship reviewing website">
 		<meta name="keywords" content="intern, interns, internship, internships, review, reviews">
 		<meta name="author" content="Hayden Phothong">
-		<title>Internship Ratings</title>
+		<link rel="stylesheet" type="text/css" href="styles/styles.css">
 	</head>
 	<body>
 		<a id="page_top"></a>
