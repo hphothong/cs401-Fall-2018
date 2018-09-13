@@ -9,20 +9,34 @@
 		<link rel="stylesheet" type="text/css" href="styles/styles.css">
 	</head>
 	<body>
-		<a id="page_top"></a>
-		<div id="banner">
-			<a href="index.php">
-				<img src="InternshipRatingsLogo.php">
-			</a>
-			<input type="text" name="search" placeholder="Search for reviews..." maxlength=2048>
-			<button type="button">Login</button>
-			<button type="button">Sign Up</button>
+		<div id="header">
+			<a id="page_top"></a>
+			<div id="banner">
+				<a href="index.php">
+					<img src="InternshipRatingsLogo.php">
+				</a>
+				<input type="text" name="search" placeholder="Search for reviews..." maxlength=2048>
+				<button id="login_button" class="button" type="button">Login</button>
+				<button id="sign_up_button" class="button" type="button">Sign Up</button>
+			</div>
+			<div id="navbar">
+				<ul>
+					<li>
+						<a href="index.php">Home</a>
+					</li>
+					<li>
+						<a href="recent_reviews.php">Recent Reviews</a>
+					</li>
+					<li>
+						<a href="top_ratings.php">Top Ratings</a>
+					</li>
+					<li>
+						<a href="top_businesses.php">Top Businesses</a>
+					</li>
+					<li>
+						<a href="top_locations.php">Top Locations</a>
+					</li>
+				</ul>
+			</div>
 		</div>
-		<div id="navbar">
-			<ul>
-				<li>
-					<a href="index.php">Home</a>
-				</li>
-			</ul>
-		</div>
-		
+		<div class="content">

@@ -1,9 +1,37 @@
+body
+{
+	background-color: #AAA;
+}
+
 #banner
 {
 	float: left;
+	display: block;
+	width: 100%;
+	height: 10%;
+	padding: 1%;
+	background-color: #AAA;
 }
 
 #navbar
 {
 	float: left;
+	margin-bottom: 88%;
+	padding-right: 2%;
+	background-color: #AAA;
+}
+
+.box
+{
+	height: 100px;
+	width: 300px;
+}
+
+#footer
+{
+	position: relative;
+	bottom: 1%;
+	width: 100%;
+	text-align: center;
+	background-color: #FFF;
 }
