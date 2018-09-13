@@ -6,7 +6,18 @@
 		<meta name="description" content="Internship reviewing website">
 		<meta name="keywords" content="intern, interns, internship, internships, review, reviews">
 		<meta name="author" content="Hayden Phothong">
-		<link rel="stylesheet" type="text/css" href="styles/styles.css">
+		<?php
+			include_once "detect_mobile.php";
+			$useragent = $_SERVER['HTTP_USER_AGENT'];
+			if (isMobile($useragent))
+			{
+				echo '<link rel="stylesheet" type="text/css" href="styles/mobile_styles.css">';
+			}
+			else
+			{
+				echo '<link rel="stylesheet" type="text/css" href="styles/styles.css">';
+			}
+		?>
 	</head>
 	<body>
 		<div id="header">
