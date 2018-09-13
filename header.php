@@ -8,7 +8,9 @@
 		<title>Internship Ratings</title>
 	</head>
 	<body>
+		<a id="page_top"></a>
 		<div id="banner">
 		</div>
 		<div id="navbar">
 		</div>
+		

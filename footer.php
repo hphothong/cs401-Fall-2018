@@ -1,3 +1,3 @@
-	<a href=#topOfPage>back to top</a>
+	<a href=#page_top>Back to top</a>
 	</body>
 </html>
