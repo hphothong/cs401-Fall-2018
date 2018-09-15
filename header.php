@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<?php include_once "functions.php"; ?>
 <html>
 	<head>
 		<title>Internship Ratings</title>	
@@ -7,47 +8,51 @@
 		<meta name="keywords" content="intern, interns, internship, internships, review, reviews">
 		<meta name="author" content="Hayden Phothong">
 		<?php
-			include_once "detect_mobile.php";
 			$useragent = $_SERVER['HTTP_USER_AGENT'];
 			if (isMobile($useragent))
 			{
-				echo '<link rel="stylesheet" type="text/css" href="styles/mobile_styles.css">';
+				echo '<link rel="stylesheet" type="text/css" href="../styles/mobile_styles.css">';
 			}
 			else
 			{
-				echo '<link rel="stylesheet" type="text/css" href="styles/styles.css">';
+				echo '<link rel="stylesheet" type="text/css" href="../styles/desktop_styles.css">';
 			}
 		?>
 	</head>
 	<body>
+		<a id="page_top"></a>
 		<div id="header">
-			<a id="page_top"></a>
 			<div id="banner">
 				<a href="index.php">
-					<img src="InternshipRatingsLogo.php">
+					<img src="../resources/InternshipRatingsLogo.png">
 				</a>
-				<input type="text" name="search" placeholder="Search for reviews..." maxlength=2048>
+				<input id="search_bar" type="text" placeholder="Search for reviews..." maxlength=2048>
 				<button id="login_button" class="button" type="button">Login</button>
-				<button id="sign_up_button" class="button" type="button">Sign Up</button>
-			</div>
-			<div id="navbar">
-				<ul>
-					<li>
-						<a href="index.php">Home</a>
-					</li>
-					<li>
-						<a href="recent_reviews.php">Recent Reviews</a>
-					</li>
-					<li>
-						<a href="top_ratings.php">Top Ratings</a>
-					</li>
-					<li>
-						<a href="top_businesses.php">Top Businesses</a>
-					</li>
-					<li>
-						<a href="top_locations.php">Top Locations</a>
-					</li>
-				</ul>
+				<button id="signup_button" class="button" type="button">Sign Up</button>
 			</div>
 		</div>
+		<div class="navbar">
+			<?php
+				$navigationPages = Array(
+					"Home" => "index.php",
+					"Recent Reviews" => "recent_reviews.php",
+					"Top Ratings" => "top_ratings.php",
+					"Top Businesses" => "top_businesses.php",
+					"Top Locations" => "top_locations.php"
+				);
+				$currentPageName = getCurrentPageName($navigationPages);
+				foreach ($navigationPages as $linkName => $linkFilename)
+				{
+					if ($linkFilename === $currentPageName)
+					{
+						echo "<a id=\"currentPage\" href=\"{$linkFilename}\">{$linkName}</a>";
+					}
+					else
+					{
+						echo "<a href=\"{$linkFilename}\">{$linkName}</a>";
+					}
+				}
+			?>
+		</div>
 		<div class="content">
+		

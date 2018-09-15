@@ -1,8 +1,9 @@
 		</div>
 		<div id="footer">
-			<a href=#page_top>
-				<span id="back_to_top">Back to top</span>
-			</a>
+			<a id="back_to_top" href=#page_top>Back to top</a>
+			<div>
+				Hayden Phothong &copy; 2018
+			</div>
 		</div>
 	</body>
 </html>
