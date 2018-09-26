@@ -1,19 +1,22 @@
-body
-{
+@import "main_styles.css";
+
+body {
 	margin: 0;
 }
 
-#banner
-{
+#banner {
 	position: fixed;
 	top: 0%;
 	width: 100%;
 	padding: 2% 2%;
-	background-color: #AAA;
+	background-color: #ffb84e;
+    box-shadow: 0px 5px 10px 5px #AAA;
 }
 
-#search_bar
-{
+#logo {
+}
+
+#search_bar {
 	width: 50%;
 	padding: 15px 5px;
 	border-radius: 12px;
@@ -21,33 +24,28 @@ body
 	font-size: 15px;
 }
 
-.button
-{
+.button {
 	padding: 15px 50px;
 	border-radius: 12px;
 	font-size: 15px;
 }
 
-#login_button
-{
+#login_button {
 	margin-right: 0;
 }
 
-#signup_button
-{
+#signup_button {
 	margin-left: 0;
 }
 
-.navbar
-{
+.navbar {
 	float: left;
 	width: 17%;
-	padding: 10px 0 0 10px;
+	padding: 0px 0px 0px 10px;
 	font-size: 20px;
 }
 
-.navbar a
-{
+.navbar a {
 	display: block;
 	text-decoration: none;
 	padding: 5% 0;
@@ -55,47 +53,51 @@ body
 	font-family: sans-serif;
 }
 
-.navbar a:visited
-{
+.navbar a:visited {
 	color: inherit;
 }
 
-#currentPage
-{
+#currentPage {
 	color: #AAA;
 }
 
-.content
-{
-	margin: 107px 0 0 244px;
-	background-color: #FF0000;
+.content {
+	margin: 130px 0 0 244px;
 }
 
-.box
-{
-	height: 100px;
+.box {
+	height: 150px;
+    margin-right: 40px;
+    margin-bottom: 20px;
+    box-shadow: 0px 5px 10px 5px #AAA;
+    background-color: #51c3df;
 }
 
-#footer
-{
+#footer {
 	position: relative;
 	bottom: 1%;
 	width: 100%;
 	text-align: center;
-	background-color: #656565;
+    color: #fff;
+    background-color: #ffb84e;
 }
 
-#back_to_top
-{
+#back_to_top {
 	display: block;
-	color: #FFF;
 	text-decoration: none;
 	font-family: sans-serif;
-	background-color: #888;
 	padding: 1% 1%;
 }
 
-#back_to_top:hover
-{
-	background-color: #656565;
+#back_to_top:visited {
+    color: inherit;
+}
+
+#back_to_top:hover {
+    color: #000;
+}
+
+#footer div {
+    padding: 20px 20px;
+    height: 30px;
 }
