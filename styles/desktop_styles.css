@@ -1,59 +1,79 @@
 @import "main_styles.css";
 
 body {
+    background-color: #F6F6F6;
 	margin: 0;
 }
 
-#banner {
+#banner_background {
 	position: fixed;
 	top: 0%;
 	width: 100%;
-	padding: 2% 2%;
-	background-color: #ffb84e;
-    box-shadow: 0px 5px 10px 5px #AAA;
+	padding: 0.5% 1% 0.05% 1%;
+	background-color: #044389; 
 }
 
 #logo {
+    display: inline-block;
+    margin-right: 1%;
+}
+
+.banner {
+    display: inline-block;
+    transform: translateY(-20%);
+}
+
+.search_bar {
+    width: 50%;
+    margin-right: 25%;
+    margin-left: 5%;
 }
 
 #search_bar {
-	width: 50%;
-	padding: 15px 5px;
+    width: 100%;
+	padding: 15px 15px;
 	border-radius: 12px;
 	text-align: left;
-	font-size: 15px;
+	font-size: 20px;
+    border: none;
+    outline: none;
+}
+
+#search_bar:focused {
+    outline: none;
 }
 
 .button {
-	padding: 15px 50px;
+    color: #fff;
 	border-radius: 12px;
 	font-size: 15px;
 }
 
 #login_button {
-	margin-right: 0;
+    margin-left: 5%;
 }
 
 #signup_button {
-	margin-left: 0;
 }
 
 .navbar {
+    position: fixed;
 	float: left;
 	width: 17%;
 	padding: 0px 0px 0px 10px;
 	font-size: 20px;
+    box-shadow: 1px 1px 10px 1px #888;
 }
 
-.navbar a {
+.navbar.a {
 	display: block;
 	text-decoration: none;
-	padding: 5% 0;
+	padding-bottom: 10%;
 	margin-left: 55px;
 	font-family: sans-serif;
 }
 
-.navbar a:visited {
+.navbar.a:visited {
 	color: inherit;
 }
 
@@ -69,35 +89,40 @@ body {
 	height: 150px;
     margin-right: 40px;
     margin-bottom: 20px;
-    box-shadow: 0px 5px 10px 5px #AAA;
-    background-color: #51c3df;
+    box-shadow: 1px 1px 10px 1px #888;
 }
 
 #footer {
 	position: relative;
 	bottom: 1%;
 	width: 100%;
+    line-height: 400%;
 	text-align: center;
     color: #fff;
-    background-color: #ffb84e;
+    background-color: #044389;
 }
 
-#back_to_top {
-	display: block;
-	text-decoration: none;
-	font-family: sans-serif;
-	padding: 1% 1%;
-}
-
-#back_to_top:visited {
-    color: inherit;
-}
-
-#back_to_top:hover {
-    color: #000;
-}
-
-#footer div {
+#footer.div {
     padding: 20px 20px;
     height: 30px;
 }
+
+.back_to_top {
+    color: #fff;
+    background-color: #044389;
+    position: relative;
+    bottom: 1%;
+    text-align: center;
+    line-height: 200%;
+    text-decoration: none;
+}
+
+.back_to_top:visited {
+    color: inherit;
+}
+
+.back_to_top:hover {
+    color: #000;
+    background-color: #F6AE2D;
+}
+

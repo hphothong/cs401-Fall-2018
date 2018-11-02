@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<?php include_once "functions.php"; ?>
+<?php require_once "functions.php"; ?>
 <html>
 	<head>
 		<title>Internship Ratings</title>	
@@ -23,38 +23,9 @@
 	</head>
 	<body>
 		<a id="page_top"></a>
-		<div id="header">
-			<div id="banner">
-				<a href="index.php">
-					<img id="logo" src="resources/InternshipRatingsLogo.png">
-				</a>
-				<input id="search_bar" type="text" placeholder="Search for reviews..." maxlength=2048>
-				<button id="login_button" class="button" type="button">Login</button>
-				<button id="signup_button" class="button" type="button">Sign Up</button>
-			</div>
-		</div>
-		<div class="navbar">
-			<?php
-				$navigationPages = Array(
-					"Home" => "index.php",
-					"Recent Reviews" => "recent_reviews.php",
-					"Top Ratings" => "top_ratings.php",
-					"Top Businesses" => "top_businesses.php",
-					"Top Locations" => "top_locations.php"
-				);
-				$currentPageName = getCurrentPageName($navigationPages);
-				foreach ($navigationPages as $linkName => $linkFilename)
-				{
-					if ($linkFilename === $currentPageName)
-					{
-						echo "<a id=\"currentPage\" href=\"{$linkFilename}\">{$linkName}</a>";
-					}
-					else
-					{
-						echo "<a href=\"{$linkFilename}\">{$linkName}</a>";
-					}
-				}
-			?>
-		</div>
+        <?php
+            require_once "banner.php";
+            require_once "navbar.php";
+        ?>
 		<div class="content">
 		
