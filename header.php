@@ -1,5 +1,6 @@
-<!DOCTYPE html>
-<?php require_once "functions.php"; ?>
+<?php session_start();
+    require_once "functions.php";
+?>
 <html>
 	<head>
 		<title>Internship Ratings</title>	
@@ -23,9 +24,4 @@
 	</head>
 	<body>
 		<a id="page_top"></a>
-        <?php
-            require_once "banner.php";
-            require_once "navbar.php";
-        ?>
-		<div class="content">
 		

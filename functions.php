@@ -1,4 +1,18 @@
 <?php
+
+    /**
+     * Function to validate an email address.
+     * @param String $email - The email address to be validated.
+     */
+    function validateEmail($email) {
+        $emailRegex = "~^[a-zA-Z0-9][a-zA-Z0-9!#$%^*'`_\\-+=\\./?{|]{0,63}@[a-zA-Z0-9][a-zA-Z0-9\\.-]{0,251}\\.[a-zA-Z0-9]~";
+        if (preg_match($emailRegex, $email)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 	/**
 	 * Function to return the current web page. This function will
 	 * help to determine the navigation highlighting.
