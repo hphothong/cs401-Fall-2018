@@ -1,5 +1,5 @@
 <?php
-    require_once "Dao.php";
+    require_once "dao.php";
     session_start();
  
     $email = $_POST["email"];

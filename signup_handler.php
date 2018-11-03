@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require_once "Dao.php";
+    require_once "dao.php";
     require_once "functions.php";
 
     $fname = $_POST["fname"];

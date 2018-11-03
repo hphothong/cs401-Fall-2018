@@ -1,6 +1,6 @@
 <?php
 
-    require_once "Dao.php";
+    require_once "dao.php";
 
     $email = "hi@live.com";
     $password = "hi";
