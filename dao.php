@@ -73,4 +73,12 @@ class Dao {
         }
     }
 
+    public function deleteUser($email) {
+        $conn = $this->getConnection();
+        $deleteQuery = "DELETE FROM Users WHERE email = :email";
+        $query = $conn->prepare($deleteQuery);
+        $query->bindParam(":email", $email);
+        return $query->execute();
+    }
+
 }
