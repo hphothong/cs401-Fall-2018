@@ -12,11 +12,11 @@
 		{
 			if ($linkFilename === $currentPageName)
 			{
-				echo "<a id=\"currentPage\" href=\"{$linkFilename}\">{$linkName}</a>";
-			}
+                echo "<a id='current_page' class='navbar_item' href='{$linkFilename}'><div><div class='navbar_notifier'><div id='current_notifier'></div></div><span class='navbar_item_label'>{$linkName}</span></div></a>";
+		    }
 			else
 			{
-				echo "<a href=\"{$linkFilename}\">{$linkName}</a>";
+				echo "<a class='navbar_item' href='{$linkFilename}'><div><div class='navbar_notifier'></div><span class='navbar_item_label'>{$linkName}</span></div></a>";
 			}
 		}
 	?>

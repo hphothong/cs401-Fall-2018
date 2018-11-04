@@ -17,6 +17,7 @@
         if ($password && $password === $passwordVerify) {
             $dao = new DAO();
             if ($dao->createUser($email, $password, $fname, $lname, $degree)) {
+                $_SESSION["user"] = $email;
                 header("Location: index.php");
             } else {
                 $_SESSION["signupError"] = "Invalid email address";
