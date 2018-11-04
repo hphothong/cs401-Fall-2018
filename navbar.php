@@ -5,7 +5,8 @@
 			"Recent Reviews" => "recent_reviews.php",
 			"Top Ratings" => "top_ratings.php",
 			"Top Businesses" => "top_businesses.php",
-			"Top Locations" => "top_locations.php"
+			"Top Locations" => "top_locations.php",
+            "Write Review" => "create_review.php"
 		);
 		$currentPageName = getCurrentPageName($navigationPages);
 		foreach ($navigationPages as $linkName => $linkFilename)

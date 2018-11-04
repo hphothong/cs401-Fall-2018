@@ -27,4 +27,4 @@
         </form>
         <a href="signup.php">Sign Up</a>
     </div>
-<?php require_once "footer.php"; ?>
+<?php require_once "footer.php";

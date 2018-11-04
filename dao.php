@@ -81,4 +81,29 @@ class Dao {
         return $query->execute();
     }
 
+    private function getUserID($email) {
+        $conn = $this->getConnection();
+        $IDQuery = "SELECT user_id AS id FROM Users WHERE email = :email";
+        $query = $conn->prepare($IDQuery);
+        $query->bindParam(":email", $email);
+        $query->execute();
+        $row = $query->fetch();
+        return $row["id"];
+    }
+
+    public function createReview($email, $companyName, $jobTitle, $rating, $comment) {
+        $userID = $this->getUserID($email);
+        $createReviewQuery = "
+            INSERT INTO Ratings(user_internship_title, company_name, rating, comment, user_id)
+            VALUES(:jobTitle, :companyName, :rating, :comment, :userID)";
+        $conn = $this->getConnection();
+        $query = $conn->prepare($createReviewQuery);
+        $query->bindParam(":jobTitle", $jobTitle);
+        $query->bindParam(":companyName", $companyName);
+        $query->bindParam(":rating", $rating);
+        $query->bindParam(":comment", $comment);
+        $query->bindParam(":userID", $userID);
+        return $query->execute();
+    }
+
 }
