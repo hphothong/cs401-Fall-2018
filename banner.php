@@ -3,8 +3,7 @@
 ?>
 <div id="banner_background">
     <div id="banner_content">
-        <div id="logo"><a href="index.php"><img src="resources/IR_Logo.png"></a></div>
-        <h1 id="website_title">Internship Ratings</h1>
+        <?php require_once "logo.php"; ?>
         <div class="search_bar banner">
             <form action="search.php">
 	            <input id="search_bar" class="search_bar banner" type="text" name="q" placeholder="Search for reviews..." maxlength=2048>
@@ -12,7 +11,7 @@
         </div>
         <?php if (isset($_SESSION["user"])) { ?>
             <div class='signout'>
-                <a class='signout' href='account.php'><img id='login_image' src='resources/account.png'></a>
+                <a class='signout' href='account.php'><img id='login_image' src='resources/account_v1.1.png'></a>
                 <a class='signout' href='signout.php'>Sign Out</a>
             </div>
         <?php } else { ?>

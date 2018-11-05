@@ -1,12 +1,10 @@
 <?php
     session_start();
     require_once "header.php";
+    require_once "banner.php";
 ?>
 
 <div class="content">
-    <div>
-        <a href="index.php"><img src="resources/IR2.png"></a>
-    </div>
     <div>
         <h1 class=<?php
             if (isset($_SESSION["signupError"])) {
@@ -16,9 +14,9 @@
                 echo "'hidden'>";
             }
         ?></h1>
-        <form method="post" action="signup_handler.php">
+        <form class="floating" method="post" action="signup_handler.php">
             <div><label for="fname" class="form_label">First Name</label></div>
-            <div><input type="text" id="fname" name="fname" value=<?php
+            <div><input type="text" id="fname" class="form_textfield" name="fname" value=<?php
                 if(isset($_SESSION["presets"]["fname"])) {
                     echo "'{$_SESSION["presets"]["fname"]}'";
                     unset($_SESSION["presets"]["fname"]);
@@ -26,7 +24,7 @@
                     echo "''";
                 } ?>></div>
             <div><label for="lname" class="form_label">Last Name</label></div>
-            <div><input type="text" id="lname" name="lname" value=<?php 
+            <div><input type="text" id="lname" class="form_textfield" name="lname" value=<?php 
                 if(isset($_SESSION["presets"]["lname"])) {
                     echo "'{$_SESSION["presets"]["lname"]}'";
                     unset($_SESSION["presets"]["lname"]);
@@ -34,7 +32,7 @@
                     echo "''";
                 } ?>></div>
             <div><label for="degree" class="form_label">Degree</label></div>
-            <div><input type="text" id="degree" name="degree" value=<?php 
+            <div><input type="text" id="degree" class="form_textfield" name="degree" value=<?php 
                 if(isset($_SESSION["presets"]["degree"])) {
                     echo "'{$_SESSION["presets"]["degree"]}'";
                     unset($_SESSION["presets"]["degree"]);
@@ -42,7 +40,7 @@
                     echo "''";
                 } ?>></div>
             <div><label for="email" class="form_label">Email*</label></div>
-            <div><input type="text" id="email" name="email" value=<?php  
+            <div><input type="text" id="email" class="form_textfield" name="email" value=<?php  
                 if(isset($_SESSION["presets"]["email"])) {
                     echo "'{$_SESSION["presets"]["email"]}'";
                     unset($_SESSION["presets"]["email"]);
@@ -50,12 +48,12 @@
                     echo "''";
                 } ?>></div>
             <div><label for="password" class="form_label">Password*</label></div>
-            <div><input type="password" id="password" name="password"></div>
+            <div><input type="password" id="password" class="form_textfield" name="password"></div>
             <div><label for="password_verify" class="form_label">Password (again)*</label></div>
-            <div><input type="password" id="password_verify" name="passwordVerify"></div>
-            <div><input type="submit" id="create_account" value="Create Account"></div>
+            <div><input type="password" id="password_verify" class="form_textfield" name="passwordVerify"></div>
+            <div><input type="submit" id="submit_login_button" value="Create Account"></div>
         </form>
         <a href="login.php">Sign In</a>
     </div>
-
+</div>
 <?php require_once "footer.php"; ?>

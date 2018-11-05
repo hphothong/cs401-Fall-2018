@@ -1,6 +1,6 @@
 @import "main_styles.css";
 
-body {
+html, body {
     background-color: #F6F6F6;
 	margin: 0;
 }
@@ -32,7 +32,8 @@ body {
 #website_title {
     display: inline-block;
     color: white;
-    font-size: 20px;
+    font-size: 30px;
+    transform: translateY(-40%);
 }
 
 .banner {
@@ -42,8 +43,8 @@ body {
 
 .search_bar {
     width: 50%;
-    margin-right: 15%;
-    margin-left: 4%;
+    margin-right: 10%;
+    margin-left: 2%;
 }
 
 #search_bar {
@@ -134,36 +135,54 @@ a.signout {
 
 .content {
 	margin: 200px 0 0 325px;
+    min-height: 65%;
 }
 
-.box {
-	height: 150px;
-    margin-right: 40px;
-    margin-bottom: 20px;
+.review_box {
     box-shadow: 1px 1px 10px 1px #888;
+}
+
+.floating {
+    margin-right: 50%;
+    padding: 1% 1%;
+    box-shadow: 1px 1px 10px 1px #888;
+}
+
+.form_label {
+    font-size: 18px;
+}
+
+.form_textfield {
+    width: 100%;
+    padding: 1% 1%;
+    margin-bottom: 5%;
+    font-size: 18px;
+}
+
+#submit_login_button {
+    height: 4%;
+    width: 30%;
+    font-size: 18px;
+    background-color: #F6F6F6;
+    border-radius: 12px;
 }
 
 #footer {
 	position: relative;
-	bottom: 1%;
+	bottom: 0;
 	width: 100%;
-    line-height: 400%;
+    height: 70px;
 	text-align: center;
     color: #fff;
     background-color: #044389;
     clear: both;
 }
 
-#footer.div {
-    padding: 20px 20px;
-    height: 30px;
-}
-
 .back_to_top {
     color: #fff;
     background-color: #044389;
-    position: relative;
-    bottom: 1%;
+    position: absolute;
+    bottom: 15%;
     text-align: center;
     line-height: 200%;
     text-decoration: none;
@@ -175,6 +194,6 @@ a.signout {
 
 .back_to_top:hover {
     color: #000;
-    background-color: #F6AE2D;
+    background-color: #51c3df;
 }
 

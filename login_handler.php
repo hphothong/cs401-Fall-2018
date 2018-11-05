@@ -8,7 +8,7 @@
     
     $isVerified = $dao->authenticateUser($email, $password);
     if ($isVerified == true) {
-        $_SESSION["user"] = $email;
+        $_SESSION["user"] = $dao->getUserID($email);
         header("Location: index.php");
     } else {
         $_SESSION["loginError"] = "Incorrect email or password";

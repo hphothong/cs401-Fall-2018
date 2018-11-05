@@ -77,8 +77,9 @@
     ?></div>
     <div><input type="submit" id="review_submit_button" value="Submit Review"></div>
 </form>
-
+</div>
 <?php
+    unset($_SESSION["status"]);
     unset($_SESSION["create_review_errors"]);
     unset($_SESSION["presets"]);
     require_once "footer.php";

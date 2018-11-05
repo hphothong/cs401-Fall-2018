@@ -24,4 +24,3 @@
 	</head>
 	<body>
 		<a id="page_top"></a>
-		

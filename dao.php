@@ -1,6 +1,7 @@
 <?php
 
 require_once "functions.php";
+require_once "review.php";
 
 class Dao {
 
@@ -73,37 +74,65 @@ class Dao {
         }
     }
 
-    public function deleteUser($email) {
+    public function deleteUser($userID) {
         $conn = $this->getConnection();
-        $deleteQuery = "DELETE FROM Users WHERE email = :email";
+        $deleteQuery = "DELETE FROM Users WHERE user_id = :userID";
         $query = $conn->prepare($deleteQuery);
-        $query->bindParam(":email", $email);
+        $query->bindParam(":userID", $userID);
         return $query->execute();
     }
 
-    private function getUserID($email) {
+    public function getUserID($email) {
         $conn = $this->getConnection();
-        $IDQuery = "SELECT user_id AS id FROM Users WHERE email = :email";
+        $IDQuery = "SELECT user_id FROM Users WHERE email = :email";
         $query = $conn->prepare($IDQuery);
         $query->bindParam(":email", $email);
         $query->execute();
         $row = $query->fetch();
-        return $row["id"];
+        return $row["user_id"];
     }
 
-    public function createReview($email, $companyName, $jobTitle, $rating, $comment) {
-        $userID = $this->getUserID($email);
-        $createReviewQuery = "
-            INSERT INTO Ratings(user_internship_title, company_name, rating, comment, user_id)
-            VALUES(:jobTitle, :companyName, :rating, :comment, :userID)";
+    public function getUserEmail($userID) {
+        $conn = $this->getConnection();
+        $emailQuery = "SELECT email FROM Users WHERE user_id = :userID";
+        $query = $conn->prepare($emailQuery);
+        $query->bindParam(":userID", $userID);
+        $query->execute();
+        $row = $query->fetch();
+        return $row["email"];
+    }
+
+    public function createReview($userEmail, $companyName, $jobTitle, $rating, $comment) {
+        $createReviewQuery = "INSERT INTO Ratings(user_email, user_internship_title,
+            company_name, rating, comment) VALUES(:userEmail, :jobTitle, :companyName,
+            :rating, :comment)";
         $conn = $this->getConnection();
         $query = $conn->prepare($createReviewQuery);
+        $query->bindParam(":userEmail", $userEmail);
         $query->bindParam(":jobTitle", $jobTitle);
         $query->bindParam(":companyName", $companyName);
         $query->bindParam(":rating", $rating);
         $query->bindParam(":comment", $comment);
-        $query->bindParam(":userID", $userID);
         return $query->execute();
+    }
+
+    public function getReviews() {
+        $getReviewsQuery = "SELECT * FROM Ratings";
+        $conn = $this->getConnection();
+        $reviews = [];
+        foreach($conn->query($getReviewsQuery) as $row) {
+            $reviews[] = new Review(
+                htmlentities($row["rating_id"]),
+                htmlentities($row["user_id"]),
+                htmlentities($row["user_internship_title"]),
+                htmlentities($row["company_name"]),
+                htmlentities($row["rating"]),
+                htmlentities($row["comment"]),
+                htmlentities($row["create_date"]),
+                htmlentities($row["update_date"])
+            );
+        }
+        return $reviews;
     }
 
 }

@@ -3,7 +3,7 @@
 
     require_once "dao.php";
 
-    $email = $_SESSION["user"];
+    $userID = $_SESSION["user"];
     $companyName = $_POST["company_name"];
     $jobTitle = $_POST["job_title"];
     $rating = $_POST["rating"];
@@ -11,6 +11,7 @@
 
     if ($companyName && $jobTitle && $rating && $comment) {
         $dao = new Dao();
+        $email = $dao->getUserEmail($userID);
         $successful = $dao->createReview($email, $companyName, $jobTitle, $rating, $comment);
         if ($successful) {
             $_SESSION["status"] = "Thank you for submitting your review!";
