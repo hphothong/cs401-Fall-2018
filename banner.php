@@ -15,7 +15,7 @@
                 <a class='signout' href='signout.php'>Sign Out</a>
             </div>
         <?php } else { ?>
-            <a class="banner" href="login.php"><div id="login_button" class="button banner">Login</div></a>
+            <a class="banner" href="login.php"><div id="login_button">Login</div></a>
             <a class="banner" href="signup.php"><div id="signup_button" class="button banner">Sign Up</div></a>
         <?php } ?>
     </div>

@@ -68,7 +68,23 @@ html, body {
 }
 
 #login_button {
-    margin-left: 5%;
+    font-size: 20px;
+    margin-bottom: 100%;
+    text-decoration: none;
+    color: white;
+}
+
+#login_button:hover {
+    background-color: #51c3df;
+}
+
+#signup_button {
+    padding: 10px 10px;
+    font-size: 20px;
+}
+
+#signup_button:hover {
+    background-color: #51c3df;
 }
 
 div.signout {
@@ -157,6 +173,7 @@ a.signout {
     padding: 1% 1%;
     margin-bottom: 5%;
     font-size: 18px;
+    outline: none;
 }
 
 #submit_login_button {
@@ -165,6 +182,11 @@ a.signout {
     font-size: 18px;
     background-color: #F6F6F6;
     border-radius: 12px;
+    outline: none;
+}
+
+#submit_login_button:hover {
+    background-color: #E6E6E6;
 }
 
 #footer {
@@ -181,10 +203,11 @@ a.signout {
 .back_to_top {
     color: #fff;
     background-color: #044389;
-    position: absolute;
-    bottom: 15%;
+    position: relative;
+    bottom: 3%; 
+    width: 100%;
     text-align: center;
-    line-height: 200%;
+    line-height: 150%;
     text-decoration: none;
 }
 

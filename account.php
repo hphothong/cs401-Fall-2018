@@ -15,5 +15,5 @@ $dao = new Dao();
     <form action="delete_account.php">
         <input type="submit" value="Delete Account">
     </form>
-
+</div>
 <?php require_once "footer.php";

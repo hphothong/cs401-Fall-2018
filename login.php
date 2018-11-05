@@ -23,7 +23,7 @@ require_once "banner.php";
             <div><input type="text" id="login" class="form_textfield" name="email"></div>
             <div><label for="login_password" class="form_label">Password</label></div>
             <div><input type="password" id="login_password" class="form_textfield" name="password"></div>
-            <div><input type="submit" id="submit_login_button" value="login"></div>
+            <div><input type="submit" id="submit_login_button" value="Login"></div>
         </form>
         <a href="signup.php">Sign Up</a>
     </div>
