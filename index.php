@@ -14,9 +14,6 @@ $dao = new Dao();
 $reviews = $dao->getReviews();
 
 foreach ($reviews as $review) {
-    if (isset($_SESSION["user"]) && $review->getUserID() == $_SESSION["user"]) {
-        echo "<span>X</span>";
-    }
     $review->display();
 }
 
