@@ -26,12 +26,17 @@ class Review {
     public function display() {
         echo "<div class='review_box'>
                     <div class='review_box_header'>
-                        <span class='review_box_title'>{$this->userInternshipTitle}</span>
-                        <span class='review_box_rating'>{$this->rating}</span>
+                        <span class='review_box_title'>{$this->userInternshipTitle}</span>";
+        echo sprintf("<span class='review_box_rating'>%.1f/5.0</span>", $this->rating);
+        echo "          <hr />
                     </div>
                     <div class='review_box_body'>
-                        <div class='review_box_company'>{$this->companyName}</div>
-                        <p class='review_box_comment'>{$this->comment}</p>
+                        <span class='review_box_label'>Company:</span>
+                        <span class='review_box_company'>{$this->companyName}</span>
+                        <div class='review_box_comment'>
+                            <div class='review_box_label'>Comment:</div>
+                            <p class='review_box_comment'>{$this->comment}</p>
+                        </div>
                     </div>
                     <div class='review_box_footer'>
                         <div class='review_box_update_date'>{$this->updateDate}</div>

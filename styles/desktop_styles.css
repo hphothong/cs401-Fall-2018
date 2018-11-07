@@ -156,12 +156,55 @@ a.signout {
 
 .review_box {
     box-shadow: 1px 1px 10px 1px #888;
+    margin: 0% 3% 2% 0%;
+    padding: 1% 1%;
+    font-size: 18px;
+}
+
+.review_box_title {
+    display: inline-block;
+    width: 90%;
+    font-style: strong;
+    font-size: 22px;
+}
+
+.review_box_comment {
+    width: 100%;
+    margin: 1% 0%;
+}
+
+p.review_box_comment {
+    margin-left: 3%;
+}
+
+.review_box_rating {
+    display: inline-block;
+    width: 5%;
+    text-align: right;
+}
+
+.review_box_company {
+}
+
+.review_box_comment {
+    min-height: 50px;
+}
+
+.review_box_update_date {
+    font-size: 14px;
+    color: #888;
+    width: 100%;
+    text-align: right;
 }
 
 .floating {
     margin-right: 50%;
     padding: 1% 1%;
     box-shadow: 1px 1px 10px 1px #888;
+}
+
+.form_required_field {
+    color: red;
 }
 
 .form_label {
@@ -176,7 +219,7 @@ a.signout {
     outline: none;
 }
 
-#submit_login_button {
+.submit_button {
     height: 4%;
     width: 30%;
     font-size: 18px;

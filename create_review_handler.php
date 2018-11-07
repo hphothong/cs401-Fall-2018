@@ -25,21 +25,21 @@
     if ($companyName) {
         $_SESSION["presets"]["company_name"] = $companyName;
     } else {
-        $_SESSION["create_review_errors"]["company_name"] = "Company Name Required";
+        $_SESSION["create_review_errors"]["company_name"] = "*Required";
     }
     if ($jobTitle) {
         $_SESSION["presets"]["job_title"] = $jobTitle;
     } else {
-        $_SESSION["create_review_errors"]["job_title"] = "Job Title Required";
+        $_SESSION["create_review_errors"]["job_title"] = "*Required";
     }
     if ($rating) {
         $_SESSION["presets"]["rating"] = $rating;
     } else {
-        $_SESSION["create_review_errors"]["rating"] = "Rating Required";
+        $_SESSION["create_review_errors"]["rating"] = "*Required";
     }
     if ($comment) {
         $_SESSION["presets"]["comment"] = $comment;
     } else {
-        $_SESSION["create_review_errors"]["comment"] = "Comment Required";
+        $_SESSION["create_review_errors"]["comment"] = "*Required";
     }
     header("Location: create_review.php");

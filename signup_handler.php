@@ -1,56 +1,49 @@
 <?php
-    session_start();
 
-    require_once "dao.php";
-    require_once "functions.php";
+session_start();
 
-    $fname = $_POST["fname"];
-    $lname = $_POST["lname"];
-    $degree = $_POST["degree"];
-    $email = $_POST["email"];
-    $password = $_POST["password"];
-    $passwordVerify = $_POST["passwordVerify"];
+require_once "dao.php";
+require_once "functions.php";
 
-    $_SESSION["presets"] = [];
+$fname = $_POST["fname"];
+$lname = $_POST["lname"];
+$degree = $_POST["degree"];
+$email = $_POST["email"];
+$password = $_POST["password"];
+$passwordVerify = $_POST["passwordVerify"];
 
-    if ($email && validateEmail($_POST["email"])) {
-        if ($password && $password === $passwordVerify) {
-            $dao = new DAO();
-            if ($dao->createUser($email, $password, $fname, $lname, $degree)) {
-                $_SESSION["user"] = $email;
-                header("Location: index.php");
-            } else {
-                $_SESSION["signupError"] = "Invalid email address";
-                $_SESSION["presets"]["fname"] = $fname;
-                $_SESSION["presets"]["lname"] = $lname;
-                $_SESSION["presets"]["degree"] = $degree;
-                $_SESSION["presets"]["email"] = $email;
-                header("Location: signup.php");
-            }
+$_SESSION["presets"] = [];
+
+if (validateEmail($_POST["email"])) {
+    if ($password === $passwordVerify) {
+        $dao = new DAO();
+        if ($dao->createUser($email, $password, $fname, $lname, $degree)) {
+            $_SESSION["user"] = $email;
+            header("Location: index.php");
+            exit;
         } else {
-            if ($password && $passwordVerify) {
-                $_SESSION["signupError"] = "Passwords did not match";
-            } else if (!$password && $passwordVerify) {
-                $_SESSION["signupError"] = "Password is required";
-            } else {
-                $_SESSION["signupError"] = "Password is required twice";
-            }
-            $_SESSION["presets"]["fname"] = $fname;
-            $_SESSION["presets"]["lname"] = $lname;
-            $_SESSION["presets"]["degree"] = $degree;
-            $_SESSION["presets"]["email"] = $email;
-            header("Location: signup.php");
+            $_SESSION["signupError"] = "Unable to create your account. Please try again!";
         }
     } else {
-        if ($email) {
-            $_SESSION["signupError"] = "Invalid email address";
-        } else {
-            $_SESSION["signupError"] = "Email address is required";
-        }
-        $_SESSION["presets"]["fname"] = $fname;
-        $_SESSION["presets"]["lname"] = $lname;
-        $_SESSION["presets"]["degree"] = $degree;
-        $_SESSION["presets"]["email"] = $email;
-        header("Location: signup.php");
+        $_SESSION["signupError"] = "Passwords do not match";
     }
+} else {
+    $_SESSION["signupError"] = "Invalid email address";
+}
 
+$_SESSION["presets"]["fname"] = $fname;
+$_SESSION["presets"]["lname"] = $lname;
+$_SESSION["presets"]["degree"] = $degree;
+$_SESSION["presets"]["email"] = $email;
+
+if (!$password) {
+    $_SESSION["signupErrors"]["password"] = "*Required";
+}
+if (!$passwordVerify) {
+    $_SESSION["signupErrors"]["passwordVerify"] = "*Required";
+}
+if (!$email) {
+    $_SESSION["signupErrors"]["email"] = "*Required";
+}
+
+header("Location: signup.php");
