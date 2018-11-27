@@ -116,8 +116,8 @@ class Dao {
         return $query->execute();
     }
 
-    public function getReviews() {
-        $getReviewsQuery = "SELECT * FROM Ratings";
+    public function getReviews($category, $ascDesc) {
+        $getReviewsQuery = "SELECT * FROM Ratings ORDER BY {$category} {$ascDesc}";
         $conn = $this->getConnection();
         $reviews = [];
         foreach($conn->query($getReviewsQuery) as $row) {

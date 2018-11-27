@@ -51,9 +51,10 @@ html, body {
 #search_bar {
     width: 100%;
 	padding: 15px 15px;
-	border-radius: 12px;
+	border-radius: 25px;
 	text-align: left;
 	font-size: 20px;
+    font-family: 'Maven Pro', sans-serif;
     border: none;
     outline: none;
 }
@@ -117,13 +118,11 @@ a.signout {
 
 .navbar_item {
     text-decoration: none;
+    color: #111;
 }
 
-.navbar_item_label {
-}
-
-.navbar.a:visited {
-	color: inherit;
+.navbar_item:hover {
+    color: #AAA;
 }
 
 #current_page {

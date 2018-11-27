@@ -11,7 +11,7 @@ require_once "review.php";
 echo "<div class='content'>";
 
 $dao = new Dao();
-$reviews = $dao->getReviews();
+$reviews = $dao->getReviews("update_date", "DESC");
 
 foreach ($reviews as $review) {
     $review->display();
