@@ -18,7 +18,7 @@ if (validateEmail($_POST["email"])) {
     if ($password === $passwordVerify) {
         $dao = new DAO();
         if ($dao->createUser($email, $password, $fname, $lname, $degree)) {
-            $_SESSION["user"] = $email;
+            $_SESSION["user"] = $dao->getUserID($email);
             header("Location: index.php");
             exit;
         } else {
