@@ -11,6 +11,8 @@
         <link rel="icon" type="image/png" href="resources/IR2.png">
 		<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
         <link href="https://fonts.googleapis.com/css?family=Maven+Pro|Gentium+Basic|Unica+One" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="JavaScript/login_error.js"></script>
 		<?php
 			$useragent = $_SERVER['HTTP_USER_AGENT'];
 			if (isMobile($useragent))
