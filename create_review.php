@@ -13,11 +13,7 @@
 
 <div class="content">
 
-<?php
-    if (isset($_SESSION["status"])) {
-        echo "<div id='review_status'>{$_SESSION["status"]}</div>";
-    }
-?> 
+ 
 
     <form class="floating" id="review_form" method="post" action="create_review_handler.php">
         <div>
@@ -64,11 +60,23 @@
         <div>
             <select id="review_rating" class="form_textfield" name="rating" form="review_form">
                 <?php
-                    for($i=0; $i<=5; $i+=0.5) {
+                    for($i=0.5; $i<=5; $i+=0.5) {
                         if (isset($_SESSION["presets"]["rating"]) && $_SESSION["presets"]["rating"] == $i) {
-                            echo "<option selected value='{$i}'>{$i}</option>";
+                            if ($i == 0.5) {
+                                echo "<option selected value='{$i}'>{$i} (worst)</option>";
+                            } else if ($i == 5) {
+                                echo "<option selected value='{$i}'>{$i} (best)</option>";
+                            } else {
+                                echo "<option selected value='{$i}'>{$i}</option>";
+                            }
                         } else {
-                            echo "<option value='{$i}'>{$i}</option>";
+                            if ($i == 0.5) {
+                                echo "<option value='{$i}'>{$i} (worst)</option>";
+                            } else if ($i == 5) {
+                                echo "<option value='{$i}'>{$i} (best)</option>";
+                            } else {
+                                echo "<option value='{$i}'>{$i}</option>";
+                            }
                         }
                     }
                 ?>
@@ -92,6 +100,11 @@
         ?></div>
         <div><input type="submit" class="submit_button" value="Submit Review"></div>
     </form>
+    <?php
+        if (isset($_SESSION["status"])) {
+            echo "<div id='review_status'>{$_SESSION["status"]}</div>";
+        }
+    ?>
 </div>
 <?php
     unset($_SESSION["status"]);

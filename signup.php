@@ -6,8 +6,12 @@
 
 <div class="content">
     <div>
+        <?php
+            if (isset($_SESSION["signupError"])) {
+                echo "<h1 class='signup_error'>{$_SESSION['signupError']}</h1>";
+            }
+        ?>
         <form class="floating" method="post" action="signup_handler.php">
-
             <div><label for="fname" class="form_label">First Name</label></div>
             <div><input type="text" id="fname" class="form_textfield" name="fname" value=<?php
                 if(isset($_SESSION["presets"]["fname"])) {
