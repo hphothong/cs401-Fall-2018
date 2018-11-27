@@ -10,7 +10,7 @@
 		<meta name="author" content="Hayden Phothong">
         <link rel="icon" type="image/png" href="resources/IR2.png">
 		<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-        <link href="https://fonts.googleapis.com/css?family=Gentium+Basic|Unica+One" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Maven+Pro|Gentium+Basic|Unica+One" rel="stylesheet">
 		<?php
 			$useragent = $_SERVER['HTTP_USER_AGENT'];
 			if (isMobile($useragent))
