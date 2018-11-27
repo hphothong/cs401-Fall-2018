@@ -33,6 +33,7 @@ html, body {
     display: inline-block;
     color: white;
     font-size: 30px;
+    font-family: 'Unica One', cursive;
     transform: translateY(-40%);
 }
 
