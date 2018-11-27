@@ -16,4 +16,5 @@ foreach ($reviews as $review) {
 
 echo "</div>";
 
+require_once "back_to_top.php";
 require_once "footer.php";
