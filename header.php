@@ -8,6 +8,7 @@
 		<meta name="description" content="Internship reviewing website">
 		<meta name="keywords" content="intern, interns, internship, internships, review, reviews">
 		<meta name="author" content="Hayden Phothong">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="resources/IR2.png">
 		<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
         <link href="https://fonts.googleapis.com/css?family=Maven+Pro|Gentium+Basic|Unica+One" rel="stylesheet">
