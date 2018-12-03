@@ -5,7 +5,7 @@
     <div id="banner_content">
         <?php require_once "logo.php"; ?>
         <div class="search_bar banner">
-            <form action="search.php">
+            <form id="banner_search_bar">
 	            <input id="search_bar" class="search_bar banner" type="text" name="q" placeholder="Search for reviews..." maxlength=2048>
             </form>
         </div>
